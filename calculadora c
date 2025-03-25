@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char b;
+
+// OPERAÇÕES //
+
+void soma() {
+    int x, y;
+    printf("Digite o primeiro número: ");
+    if (scanf("%d", &x) != 1) return; // Verifica erro de entrada
+    printf("Digite o segundo número: ");
+    if (scanf("%d", &y) != 1) return;
+    printf("Resultado: %d\n", x + y);
+}
+
+void sub() {
+    int x, y;
+    printf("Digite o primeiro número: ");
+    if (scanf("%d", &x) != 1) return;
+    printf("Digite o segundo número: ");
+    if (scanf("%d", &y) != 1) return;
+    printf("Resultado: %d\n", x - y);
+}
+
+void mult() {
+    int x, y;
+    printf("Digite o primeiro número: ");
+    if (scanf("%d", &x) != 1) return;
+    printf("Digite o segundo número: ");
+    if (scanf("%d", &y) != 1) return;
+    printf("Resultado: %d\n", x * y);
+}
+
+void divisao() { // Nome corrigido
+    int x, y;
+    printf("Digite o primeiro número: ");
+    if (scanf("%d", &x) != 1) return;
+    printf("Digite o segundo número: ");
+    if (scanf("%d", &y) != 1) return;
+
+    if (y == 0) {
+        printf("Erro: divisão por zero não permitida!\n");
+    } else {
+        printf("Resultado: %d\n", x / y);
+    }
+}
+
+// PRINCIPAL //
+
+int main() {
+    int a;
+    do {
+        printf("===============================\n"
+               "Calculadora Simples\n"
+               "===============================\n"
+               "Selecione uma operação:\n"
+               "1. Adição\n"
+               "2. Subtração\n"
+               "3. Multiplicação\n"
+               "4. Divisão\n"
+               "5. Sair\n"
+               "Opção: ");
+
+        if (scanf("%d", &a) != 1) { // Verifica erro na entrada
+            printf("Entrada inválida! Tente novamente.\n");
+            return 1; // Encerra com erro
+        }
+
+        switch (a) {
+            case 1: soma(); break;
+            case 2: sub(); break;
+            case 3: mult(); break;
+            case 4: divisao(); break;
+            case 5:
+                printf("Obrigado por usar a calculadora! Até a próxima.\n");
+                return 0;
+            default:
+                printf("Opção inválida! Escolha de 1 a 5.\n");
+        }
+
+        printf("Deseja realizar outra operação? (s/n): ");
+        scanf(" %c", &b); // Corrigido espaço antes de %c
+
+    } while (b == 's' || b == 'S');
+
+    printf("Obrigado por usar a calculadora! Até a próxima.\n");
+    return 0;
+}
