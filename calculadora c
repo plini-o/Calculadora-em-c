@@ -82,7 +82,7 @@ int main() {
         printf("Deseja realizar outra operação? (s/n): ");
         scanf(" %c", &b); // Corrigido espaço antes de %c
 
-    } while (b == 'n' || b == 'N');
+    } while (b == 's' || b == 'S');
 
     printf("Obrigado por usar a calculadora! Até a próxima.\n");
     return 0;
