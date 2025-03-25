@@ -8,36 +8,36 @@ char b;
 void soma() {
     int x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) return; // Verifica erro de entrada
+    scanf("%d", &x);
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) return;
+    scanf("%d", &y);
     printf("Resultado: %d\n", x + y);
 }
 
 void sub() {
     int x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) return;
+    scanf("%d", &x);
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) return;
+    scanf("%d", &y);
     printf("Resultado: %d\n", x - y);
 }
 
 void mult() {
-    float x, y;
+    int x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) return;
+   scanf("%d", &x);
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) return;
-    printf("Resultado: %d\n", x * y);
+   scanf("%d", &y);
+    printf("Resultado: %d\n", x*y);
 }
 
 void divisao() { // Nome corrigido
-    float x, y;
+    int x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) return;
+    scanf("%d", &x);
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) return;
+    scanf("%f", &y);
 
     if (y == 0) {
         printf("Erro: divisão por zero não permitida!\n");
