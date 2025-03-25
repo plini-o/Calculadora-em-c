@@ -24,7 +24,7 @@ void sub() {
 }
 
 void mult() {
-    int x, y;
+    float x, y;
     printf("Digite o primeiro número: ");
     if (scanf("%d", &x) != 1) return;
     printf("Digite o segundo número: ");
@@ -33,7 +33,7 @@ void mult() {
 }
 
 void divisao() { // Nome corrigido
-    int x, y;
+    float x, y;
     printf("Digite o primeiro número: ");
     if (scanf("%d", &x) != 1) return;
     printf("Digite o segundo número: ");
