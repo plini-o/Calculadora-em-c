@@ -7,42 +7,48 @@ char b;
 void soma() {
     int x, y;
     printf("Digite o primeiro número: ");
-    scanf("%d", &x);
+    if (scanf("%d", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Digite o segundo número: ");
-    scanf("%d", &y);
+    if (scanf("%d", &y) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Resultado: %d\n", x + y);
 }
 
 void sub() {
     int x, y;
     printf("Digite o primeiro número: ");
-    scanf("%d", &x);
+    if (scanf("%d", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Digite o segundo número: ");
-    scanf("%d", &y);
+    if (scanf("%d", &y) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Resultado: %d\n", x - y);
 }
 
 void mult() {
     int x, y;
     printf("Digite o primeiro número: ");
-    scanf("%d", &x);
+    if (scanf("%d", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Digite o segundo número: ");
-    scanf("%d", &y);
+    if (scanf("%d", &y) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Resultado: %d\n", x * y);
 }
 
 void divisao() { 
-    int x;
-    float y; // Alterado para float
+    float x, y;
     printf("Digite o primeiro número: ");
-    scanf("%d", &x);
+    if (scanf("%f", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    
     printf("Digite o segundo número: ");
-    scanf("%f", &y); // Agora compatível com float
+    if (scanf("%f", &y) != 1) { printf("Entrada inválida!\n"); return; }
 
     if (y == 0) {
         printf("Erro: divisão por zero não permitida!\n");
     } else {
-        printf("Resultado: %.2f\n", x / y); // Mostra o resultado corretamente como float
+        printf("Resultado: %.2f\n", x / y);
     }
 }
 
@@ -61,9 +67,10 @@ int main() {
                "5. Sair\n"
                "Opção: ");
 
-        if (scanf("%d", &a) != 1) { // Verifica erro na entrada
+        if (scanf("%d", &a) != 1) { 
             printf("Entrada inválida! Tente novamente.\n");
-            return 1;
+            while (getchar() != '\n'); // Limpa buffer de entrada
+            continue;
         }
 
         switch (a) {
@@ -78,8 +85,9 @@ int main() {
                 printf("Opção inválida! Escolha de 1 a 5.\n");
         }
 
+        while (getchar() != '\n'); // Limpa buffer antes de pegar 's' ou 'n'
         printf("Deseja realizar outra operação? (s/n): ");
-        scanf(" %c", &b); // Corrigido espaço antes de %c para limpar buffer
+        scanf(" %c", &b);
 
     } while (b == 's' || b == 'S');
 
