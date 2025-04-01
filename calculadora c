@@ -1,10 +1,9 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
 
 char b;
 
 // OPERAÇÕES //
-
 void soma() {
     int x, y;
     printf("Digite o primeiro número: ");
@@ -26,28 +25,28 @@ void sub() {
 void mult() {
     int x, y;
     printf("Digite o primeiro número: ");
-   scanf("%d", &x);
+    scanf("%d", &x);
     printf("Digite o segundo número: ");
-   scanf("%d", &y);
-    printf("Resultado: %d\n", x*y);
+    scanf("%d", &y);
+    printf("Resultado: %d\n", x * y);
 }
 
-void divisao() { // Nome corrigido
-    int x, y;
+void divisao() { 
+    int x;
+    float y; // Alterado para float
     printf("Digite o primeiro número: ");
     scanf("%d", &x);
     printf("Digite o segundo número: ");
-    scanf("%f", &y);
+    scanf("%f", &y); // Agora compatível com float
 
     if (y == 0) {
         printf("Erro: divisão por zero não permitida!\n");
     } else {
-        printf("Resultado: %d\n", x / y);
+        printf("Resultado: %.2f\n", x / y); // Mostra o resultado corretamente como float
     }
 }
 
 // PRINCIPAL //
-
 int main() {
     int a;
     do {
@@ -64,7 +63,7 @@ int main() {
 
         if (scanf("%d", &a) != 1) { // Verifica erro na entrada
             printf("Entrada inválida! Tente novamente.\n");
-            return 1; // Encerra com erro
+            return 1;
         }
 
         switch (a) {
@@ -80,7 +79,7 @@ int main() {
         }
 
         printf("Deseja realizar outra operação? (s/n): ");
-        scanf(" %c", &b); // Corrigido espaço antes de %c
+        scanf(" %c", &b); // Corrigido espaço antes de %c para limpar buffer
 
     } while (b == 's' || b == 'S');
 
