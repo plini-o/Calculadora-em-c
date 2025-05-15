@@ -6,36 +6,36 @@ int a;
 
 // OPERAÇÕES //
 void soma() {
-    int x, y;
+    float x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    if (scanf("%f", &x) != 1) { printf("Entrada inválida!\n"); return; }
 
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) { printf("Entrada inválida!\n"); return; }
+    if (scanf("%f", &y) != 1) { printf("Entrada inválida!\n"); return; }
 
-    printf("Resultado: %d\n", x + y);
+    printf("%f + %f = %f\n",x,y, x + y);
 }
 
 void sub() {
-    int x, y;
+    float x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    if (scanf("%f", &x) != 1) { printf("Entrada inválida!\n"); return; }
 
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) { printf("Entrada inválida!\n"); return; }
+    if (scanf("%f", &y) != 1) { printf("Entrada inválida!\n"); return; }
 
-    printf("Resultado: %d\n", x - y);
+    printf("%f - %f = %f\n",x, y, x - y);
 }
 
 void mult() {
-    int x, y;
+    float x, y;
     printf("Digite o primeiro número: ");
-    if (scanf("%d", &x) != 1) { printf("Entrada inválida!\n"); return; }
+    if (scanf("%f", &x) != 1) { printf("Entrada inválida!\n"); return; }
 
     printf("Digite o segundo número: ");
-    if (scanf("%d", &y) != 1) { printf("Entrada inválida!\n"); return; }
+    if (scanf("%f", &y) != 1) { printf("Entrada inválida!\n"); return; }
 
-    printf("Resultado: %d\n", x * y);
+    printf("%f* %f = %f\n", x, y, x * y);
 }
 
 void divisao() { 
@@ -49,7 +49,7 @@ void divisao() {
     if (y == 0) {
         printf("Erro: divisão por zero não permitida!\n");
     } else {
-        printf("Resultado: %.2f\n", x / y);
+        printf("%f / %f = %.2f\n", x, y, x / y);
     }
 }
 
